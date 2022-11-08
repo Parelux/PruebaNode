@@ -1,8 +1,8 @@
 # Requisitos de sistema
-- Docker Engine
-- docker-compose 
-- NPM
-- Node.js
+- (Opcional) Docker Engine
+- (Opcional) docker-compose 
+- npm 
+- node.js
 # Pasos para arrancar
 - Instalar las dependencias necesarias para la ejecución:
     - npm install
