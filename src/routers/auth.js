@@ -1,12 +1,12 @@
 const express = require('express')
-
+const authController = require('../controllers/auth.controller')
 
 const router = new express.Router()
 
+//Create a new user
+router.post('/users', authController.createUser )
 
-router.app.post('/login', (req, res) => {
-  //Auth token generation
+//Perform a login operation using user credentials
+router.post('/users/login', authController.login )
 
-
-  res.send('LoginREQUESTED')
-})
+module.exports = router

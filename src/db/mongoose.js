@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 mongoose.connect(process.env.MONGODB_URL, {
     useNewUrlParser: true,
 }).then(result => {
-    console.log("Success connecting to mongoDB")
+    console.log("Success connecting to mongoDB database!")
 }).catch(error => {
-    console.error("Error connecting..",error)
+    console.error("Error connecting to mongoDB database: ",error)
 })
