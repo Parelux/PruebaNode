@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd -f config/dev.env nodemon src/index.js",
-    "test": "env-cmd -f config/test.env jest --watch"
+    "test": "env-cmd -f config/test.env jest --coverage --watch"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,9 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Parelux/PruebaNode/issues"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   
   "homepage": "https://github.com/Parelux/PruebaNode#readme",

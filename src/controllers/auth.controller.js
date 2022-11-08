@@ -1,4 +1,3 @@
-const mongoose  = require('mongoose');
 const User = require("../models/user.model");
 const jwt = require('jsonwebtoken');
 
@@ -20,17 +19,19 @@ const createUser = async (req, res) => {
  * Perform a login with valid user credentials
  */
 const login = async (req, res) => {
-    const email = req.body.email? req.body.email: undefined;
-    const password = req.body.password? req.body.password: undefined;
+    const email = req.body.email ? req.body.email : undefined;
+    const password = req.body.password ? req.body.password : undefined;
 
-    if(!email || !password){
-        return res.status(400).send({error: "Bad user data entry."})
+    if (!email || !password) {
+        return res.status(400).send({ error: "Bad user data entry." })
     }
-
-    const user = await User.findByCredentials(email,password);
-    const token = await user.generateAuthToken();
-    
-    res.send({ user, token })
+    try {
+        const user = await User.findByCredentials(email, password);
+        const token = await user.generateAuthToken();
+        res.send({ user, token })
+    } catch (e) {
+        res.status(401).send()
+    }
 }
 
 module.exports = {

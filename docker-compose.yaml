@@ -1,4 +1,4 @@
-#Docker-Compose Build App V_1 The City
+#Docker-Compose Build and Run basics
 
 # Step 1-First you need to build
 # docker-compose build
@@ -21,7 +21,6 @@
 
 
 # DOCKER MANAGEMENT
-
 #List all containers on this pc (even the ones that are not running) 
 #docker ps --all
 
@@ -37,7 +36,6 @@
 #FORCE delete images
 #docker rmi -f $(docker images -q)
 
-
 version: "3.7"
 services:
     mongo-test-db:
@@ -46,9 +44,9 @@ services:
         ports:
             - '27069:27017' #--port 27069 to access db
         volumes:
-            - ./dataDB/mongo-test-db:/data/db
+            - ~/dataDB/mongo-test-db:/data/db
 
-    ######Mongo esplress module###### 
+    ######Mongo express module###### 
     mongo-express-test:
         container_name: mongo-express-test
         image: mongo-express
