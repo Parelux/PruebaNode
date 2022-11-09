@@ -33,6 +33,7 @@ Products Tests
 - should insert a new product (41 ms)
 - should not delete if unauthorized (44 ms)
 - should delete an existing product (40 ms)
+
 Auth and Users Tests
 - should create a new user (77 ms)
 - Should login existing user (75 ms)
